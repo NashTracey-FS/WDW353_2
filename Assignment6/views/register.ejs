@@ -25,7 +25,7 @@
             <div class="container">
                 <div>&nbsp;</div>
                 <!-- Register Section Heading-->
-                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Sign Up</h2>
+                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Register</h2>
                 <!-- Icon Divider-->
                 <div class="divider-custom">
                     <div class="divider-custom-line"></div>
@@ -37,11 +37,11 @@
                 <!-- Register Section Form-->
                 <div class="row justify-content-center">
                     <div class="col-lg-8 col-xl-7">
-                    
+                        <h3 id="message" style="text-align:center;">Registration Form</h3>
                         <form style="text-align: center;">
                             <fieldset>
-                                <legend>Registation Form</legend>
-                            
+                                <legend>Enter your details</legend>
+
                                     <div>
                                         <p>First Name:</p>
                                         <input type="text" 
@@ -96,7 +96,7 @@
                                             <div class="invalid-feedback" data-sb-feedback="email:required">Can't be blank</div>
 
                                             <br>
-                                            <p>Phonee:</p>
+                                            <p>Phone:</p>
                                             <input type="text" 
                                             placeholder="phone"
                                             pattern = "\(?(\d{3})\)?[-\.\s]?(\d{3})[-\.\s]?(\d{4})"
@@ -118,7 +118,13 @@
                                             <br>
                                             <div class="invalid-feedback" data-sb-feedback="bio:required">Can't be blank</div>
                                     </div>
-                                    <br>
+                                    <br><br>
+                                     <!-- Consent-->
+                                     <div class="form-floating mb-3">
+                                        <div class="checkbox">
+                                            <label><input type="checkbox" name="consent">Are you at least 18 years or older and consent to recieve email alerts?</label>
+                                        </div>
+                                        <br>
                                     <div>
                                         <label for="age">Age:</label>
                                         <select name="age" >
@@ -130,7 +136,7 @@
                                         <br>
                                         <label>Gender:</label> 
                                         <br>
-                                        <input type="radio">
+                                        <input name="gender" type="radio">
                                           <label for="male">Male</label><br>
                                           <input type="radio">
                                           <label for="female">Female</label><br>
@@ -140,10 +146,12 @@
                                     <br><br>
                                     <div>
                                         <label for="bio">Bio:</label>
-                                        <textarea>
+                                        <textarea name="bio">
                                             Enter Bio...
                                         </textarea>
                                     </div>
+                                    <br><br>
+                                   
                                       <!-- Submit success message-->
                             <!---->
                             <!-- This is what your users will see when the form-->
@@ -164,19 +172,19 @@
                             <!-- Submit Button-->
                             <button class="btn btn-primary btn-xl" id="submitButton" type="submit" onclick="message()">Submit</button>
                                    
-                                        <script>
+                            <script>
                                 function message (){
-                                 if(document.getElementById("email").value && document.getElementById("password").value != null){
-                                     document.getElementById("message").style.color="green"
-                                        document.getElementById("message").innerHTML="Registration Successful!"
-                                 }else{
-        
-                                      document.getElementById("message").style.color="red"
+                                 if(document.getElementById("password") == null){
+                                     
+                                        document.getElementById("message").style.color="red"
                                         document.getElementById("message").innerHTML="Registration Failed!"
+                                 }else{ 
+        
+                                    document.getElementById("message").style.color="green"
+                                        document.getElementById("message").innerHTML="Registration Successful!"
                                    }
                                     }
                             </script>
-                                   
                             </fieldset>
                         </form>
                     </div>  
